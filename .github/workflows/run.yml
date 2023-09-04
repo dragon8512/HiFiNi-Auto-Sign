@@ -5,7 +5,7 @@ on:
         branches:
             - master
     schedule:
-        - cron: '0 0 * * *'
+        - cron: '0 0 1 * * ?'
 
 jobs:
     build:
@@ -17,7 +17,7 @@ jobs:
               uses: actions/setup-go@v3
               with:
                 go-version: '^1.14'
-            - name: HIFINI 自动签到
+            - name: HIFINI 自动签到22
               env:
                 COOKIE: ${{ secrets.COOKIE }}
               run: go run main.go
